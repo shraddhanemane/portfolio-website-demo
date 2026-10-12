@@ -4888,33 +4888,29 @@ input, select, textarea {
     animation: mindmap-pulse 1.5s ease-in-out infinite;
 }
 
+
 @keyframes mindmap-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-
-@keyframes mindmap-pulse {
-    0%, 100% { opacity: 0.45; box-shadow: 0 0 0 0 #63d8bd44; }
-    50% { opacity: 1; box-shadow: 0 0 0 7px #63d8bd00; }
-}
-
-@media screen and (max-width: 600px) {
-    .about-mindmap {
-        padding: 2rem 1rem !important;
+    0%, 100% {
+        transform: translateY(0);
     }
-
-    .mindmap-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mindmap-card {
-        padding: 1.2rem;
+    50% {
+        transform: translateY(-12px);
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .mindmap-card,
-    .pulse-dot {
-        animation: none;
-    }
+.about-mindmap .mindmap-card {
+    animation: mindmap-float 2.5s ease-in-out infinite !important;
+}
+
+.about-mindmap .mindmap-card:nth-child(2) {
+    animation-delay: 0.4s !important;
+}
+
+.about-mindmap .mindmap-card:nth-child(3) {
+    animation-delay: 0.8s !important;
+}
+
+.about-mindmap .mindmap-card:nth-child(4) {
+    animation-delay: 1.2s !important;
+}
 }
