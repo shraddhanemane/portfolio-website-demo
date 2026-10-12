@@ -4695,4 +4695,144 @@ input, select, textarea {
 
 
 
+/* Animated About Me Mind Map */
+.about-mindmap {
+    box-sizing: border-box;
+    padding: 3.5rem 2rem !important;
+    margin: 2rem 0 !important;
+    background: #101d2a;
+    color: #f3f6fa;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    background-image:
+        radial-gradient(circle at 50% 0%, #23413f 0, transparent 55%);
+}
+
+.about-mindmap .mindmap-header h2 {
+    color: #ffffff;
+    margin: 0.6rem 0;
+    letter-spacing: 0.05em;
+}
+
+.mindmap-label {
+    color: #63d8bd;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.about-mindmap .mindmap-header p {
+    color: #b8c9d6;
+    margin-bottom: 2rem;
+}
+
+.mindmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.mindmap-card {
+    padding: 1.5rem 1rem;
+    border: 1px solid #38505d;
+    border-radius: 10px;
+    background: rgba(24, 42, 56, 0.85);
+    text-align: left;
+    animation: mindmap-float 4s ease-in-out infinite;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.mindmap-card:hover {
+    border-color: #63d8bd;
+    background: #1b3542;
+}
+
+.mindmap-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.mindmap-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.mindmap-card:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.mindmap-icon {
+    display: inline-block;
+    color: #63d8bd;
+    font-size: 1.7rem;
+    margin-bottom: 0.6rem;
+}
+
+.mindmap-card h3 {
+    color: #ffffff;
+    margin: 0 0 0.35rem;
+    font-size: 1.1rem;
+}
+
+.mindmap-card p {
+    color: #85dcca;
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+}
+
+.mindmap-card small {
+    color: #c0ccd5;
+    font-size: 0.8rem;
+}
+
+.mindmap-footer {
+    color: #8ba5b1;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin-top: 2rem;
+}
+
+.pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #63d8bd;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: mindmap-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes mindmap-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes mindmap-pulse {
+    0%, 100% { opacity: 0.45; box-shadow: 0 0 0 0 #63d8bd44; }
+    50% { opacity: 1; box-shadow: 0 0 0 7px #63d8bd00; }
+}
+
+@media screen and (max-width: 600px) {
+    .about-mindmap {
+        padding: 2rem 1rem !important;
+    }
+
+    .mindmap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mindmap-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mindmap-card,
+    .pulse-dot {
+        animation: none;
+    }
+}
+
 
